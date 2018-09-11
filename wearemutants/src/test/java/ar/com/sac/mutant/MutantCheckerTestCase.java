@@ -1,5 +1,9 @@
 package ar.com.sac.mutant;
 
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
+
 import ar.com.sac.human.Human;
 import junit.framework.TestCase;
 
@@ -9,6 +13,13 @@ public class MutantCheckerTestCase extends TestCase{
 	public void testIsMutant(){
 		Human mutant = new Human();
 		mutant.setDna(new String[]{"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"});
+		
+		MongoClientURI uri = new MongoClientURI(
+			    "mongodb+srv://cheppi74%40gmail.com:Mansur74!@cluster0-qbrko.gcp.mongodb.net/test?retryWrites=true");
+		MongoClient mongoClient = new MongoClient(uri);
+	    MongoDatabase database = mongoClient.getDatabase("test");
+		
+		
 		assertTrue(MutantChecker.isMutant(mutant.getDna()));
 	}
 	
