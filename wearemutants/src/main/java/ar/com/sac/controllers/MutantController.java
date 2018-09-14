@@ -43,7 +43,7 @@ public class MutantController {
     	Gson gson = new Gson();
     	long countHumans = humanService.countHumans();
     	long countMutants = humanService.countMutants();
-    	double ratio = countMutants/countHumans;
+    	double ratio = countHumans == 0 ? 0 : countMutants/countHumans;
         JsonObject stats = new JsonObject();
 		stats .addProperty("count_mutant_dna", countMutants);
 		stats.addProperty("count_human_dna", countHumans);
