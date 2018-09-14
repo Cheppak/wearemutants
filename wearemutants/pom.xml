@@ -73,12 +73,14 @@
      	<dependency>
         	<groupId>org.apache.commons</groupId>
         	<artifactId>commons-lang3</artifactId>
+        	<version>3.8</version>
         	</dependency>
 		<!-- Json -->    	
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-			</dependency>
+			<version>2.8.5</version>
+		</dependency>
 	</dependencies>
 
 	<build>
